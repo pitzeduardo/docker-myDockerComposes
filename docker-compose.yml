@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  db1:
+    image: mysql:8.0.17
+    command: --disable-log-bin
+    environment:
+      MYSQL_ROOT_PASSWORD: basedeelite
+      MYSQL_DATABASE: 'asaasdevelopment'
+    restart: always
+    ports:
+    - "3306:3306"
+    volumes:
+    - /var/lib/mysql:/var/lib/mysql
+
+  db2:
+    image: mysql:8.0.17
+    command: --disable-log-bin  
+    environment:
+      MYSQL_ROOT_PASSWORD: basedeelite
+      MYSQL_DATABASE: 'bifrostdevelopment'
+    restart: always
+    ports:
+    - "5500:5500"
+    volumes:
+    - /var/lib/mysql:/var/lib/mysql
